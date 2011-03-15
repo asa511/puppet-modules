@@ -42,10 +42,10 @@ class tomcat {
     # Include project specific class if $my_project is set
     # The extra project class is by default looked in tomcat module 
     # If $my_project_onmodule == yes it's looked in your project module
-    if $my_project { 
+    if $my_project_tomcat { 
         case $my_project_onmodule {
-            yes,true: { include "${my_project}::tomcat" }
-            default: { include "tomcat::${my_project}" }
+            yes,true: { include "${my_project_tomcat}::tomcat" }
+            default: { include "tomcat::${my_project_tomcat}" }
         }
     }
 
